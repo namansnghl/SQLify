@@ -2,10 +2,13 @@
 > (SEQUELify)
 > *A Transfer Learning Approach to Semantic Parsing SQL Queries*
 
-## Navigation
+# Navigation
 - [Introduction](#introduction)
 - [Related Work](#related-work)
 - [Models](#Models)
+  - Neural Machine Translation
+  - T5-Small
+  - BART-Base
 - [Results](#Results)
 
 # INTRODUCTION
@@ -33,18 +36,19 @@ This project builds upon a baseline seq2seq model with attention, treating SQL g
 # MODELS
 
 ## NMT
+![Architecture of NMT Model](https://github.com/namansnghl/SQLify/blob/main/media/NMT_arch.png)
+
 Neural Machine Translation (NMT) is a sophisticated approach to automatic translation powered by artificial neural networks. Unlike traditional statistical methods, NMT processes the entire source sentence as a whole and generates the target translation more fluently and coherently. At its core, NMT uses an encoder to convert the source text into a contextual representation, and a decoder to produce the translated text. On top of this, an additional Attention layer is added to the model to take into account the context for each token in the input with the output. For this, the Bahdanau Attention mechanism was used to capture the attention between each output token against all input tokens.
 
-!(Architecture of NMT Model)[https://github.com/namansnghl/SQLify/blob/main/media/NMT_arch.png]
-
-## T5
+## T5-SMALL
 T-5 small is one of the checkpoints of the T-5 model created by Google, with 60 million parameters. The authors introduced a unified framework that transforms various text-based language problems into a text-to-text format, facilitating systematic comparisons across different aspects of transfer learning. Their study encompasses pre-training objectives, architectures, unlabeled datasets, transfer approaches, and other factors across numerous language understanding tasks. Leveraging scale and a new dataset named the "Colossal Clean Crawled Corpus," the authors achieve state-of-the-art results on various benchmarks including summarization, question answering, and text classification.
 
-## BART
+## BART-BASE
 BART (Bidirectional and Auto-Regressive Transformers) is a sequence-to-sequence model developed by Facebook AI Research. It is a transformer-based encoder-decoder model. It is a powerful transformer model designed for various natural language processing tasks. It utilizes a bidirectional encoder like BERT and an autoregressive decoder similar to GPT. This model is pre-trained using a two-step process: first, the text is corrupted using a chosen noise function, and then the model learns to reconstruct the original text. This approach enables BART to understand and generate coherent text, making it particularly effective for tasks like summarization, translation, text classification, and question answering. While the raw model can be utilized for tasks like text infilling, its primary strength lies in fine-tuning it on supervised datasets for specific tasks
 
 
 # RESULTS
-!(Performance Metric)[https://github.com/namansnghl/SQLify/blob/main/media/performance_metrics.png]
 
-We hypothesized that the T5 model, known for its exceptional language modeling capabilities, would perform well in our task. However, our experiments revealed that BART outperformed both T5 and the standard NMT approach. BART's ability to handle noisy data, stemming from its training on diverse datasets, equipped it to generate accurate translations even for complex passages. While quantitative metrics showed a modest advantage for BART, qualitative analysis yielded promising results. BART-Base achieved a BLEU score of 95.5%, surpassing T5-Small's score of 94.4%. Similarly, BART-Base secured a METEOR score of 97.9%, edging out T5-Small's score of 97.4% (Fig.2). Notably, the incorporation of attention mechanisms allowed these models to achieve superior performance compared to state-of-the-art graph-based models on the WikiSQL dataset.
+![Performance Metric](https://github.com/namansnghl/SQLify/blob/main/media/performance_metrics.png)
+
+We hypothesized that the T5 model, known for its exceptional language modeling capabilities, would perform well in our task. However, our experiments revealed that BART outperformed both T5 and the standard NMT approach. BART's ability to handle noisy data, stemming from its training on diverse datasets, equipped it to generate accurate translations even for complex passages. While quantitative metrics showed a modest advantage for BART, qualitative analysis yielded promising results. BART-Base achieved a BLEU score of 95.5%, surpassing T5-Small's score of 94.4%. Similarly, BART-Base secured a METEOR score of 97.9%, edging out T5-Small's score of 97.4%. Notably, the incorporation of attention mechanisms allowed these models to achieve superior performance compared to state-of-the-art graph-based models on the WikiSQL dataset.
