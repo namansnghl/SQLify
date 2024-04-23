@@ -1,5 +1,6 @@
 # SQLify: Semantic Parser
 *A Transfer Learning Approach to Semantic Parsing SQL Queries*
+![](https://github.com/namansnghl/SQLify/blob/main/media/t2s_resized.png)
 
 # Navigation
 * [Introduction](#introduction)
