@@ -15,7 +15,7 @@
 # INTRODUCTION
 This project addresses the challenge of navigating complex business databases as their size increases. We investigate the potential of pre-trained language models (BART, T5) and Neural Machine Translation (NMT) techniques to improve accessibility through transfer learning.
 
-Leveraging the WikiSQL dataset, the project focuses on generating the SQL SELECT WHERE clause, a crucial component for filtering desired data. The findings provide valuable insights into the effectiveness of pre-trained models for text-to-SQL tasks, paving the way for further exploration in enhancing business database accessibility.
+Leveraging the [WikiSQL](https://paperswithcode.com/dataset/wikisql) dataset, the project focuses on generating the SQL SELECT WHERE clause, a crucial component for filtering desired data. The findings provide valuable insights into the effectiveness of pre-trained models for text-to-SQL tasks, paving the way for further exploration in enhancing business database accessibility.
 
 
 # RELATED WORK
@@ -49,6 +49,8 @@ BART (Bidirectional and Auto-Regressive Transformers) is a sequence-to-sequence 
 
 
 # RESULTS
+
+[Benchmarks](https://paperswithcode.com/sota/sql-to-text-on-wikisql)
 
 ![Performance Metric](https://github.com/namansnghl/SQLify/blob/main/media/performance_metrics.png)
 
