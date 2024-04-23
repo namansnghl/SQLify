@@ -10,6 +10,7 @@
     * [BART-Base](#bart-base)
 * [Results](#results)
 * [Conclusion](#conclusion)
+* [References](#references)
 
 # INTRODUCTION
 This project addresses the challenge of navigating complex business databases as their size increases. We investigate the potential of pre-trained language models (BART, T5) and Neural Machine Translation (NMT) techniques to improve accessibility through transfer learning.
@@ -52,3 +53,15 @@ BART (Bidirectional and Auto-Regressive Transformers) is a sequence-to-sequence 
 ![Performance Metric](https://github.com/namansnghl/SQLify/blob/main/media/performance_metrics.png)
 
 We hypothesized that the T5 model, known for its exceptional language modeling capabilities, would perform well in our task. However, our experiments revealed that BART outperformed both T5 and the standard NMT approach. BART's ability to handle noisy data, stemming from its training on diverse datasets, equipped it to generate accurate translations even for complex passages. While quantitative metrics showed a modest advantage for BART, qualitative analysis yielded promising results. BART-Base achieved a BLEU score of 95.5%, surpassing T5-Small's score of 94.4%. Similarly, BART-Base secured a METEOR score of 97.9%, edging out T5-Small's score of 97.4%. Notably, the incorporation of attention mechanisms allowed these models to achieve superior performance compared to state-of-the-art graph-based models on the WikiSQL dataset.
+
+# REFERENCES
+
+- Li, Y., Tarlow, D., Brockschmidt, M., & Zemel, R. (2015). Gated graph sequence neural networks. arXiv preprint arXiv:1511.05493.
+- Xu, K., Wu, L., Wang, Z., Feng, Y., Witbrock, M., & Sheinin, V. (2018). Graph2seq: Graph to sequence learning with attention-based neural networks. arXiv preprint arXiv:1804.00823.
+- Victor Zhong, Caiming Xiong, and Richard Socher. Seq2sql: Generating structured queries from natural language using reinforcement learning. CoRR, abs/1709.00103, 2017.
+- Katsogiannis-Meimarakis, G., & Koutrika, G. (2023). A survey on deep learning approaches for text-to-SQL. The VLDB Journal, 1-32.
+- Kumar, A., Nagarkar, P., Nalhe, P., & Vijayakumar, S. (2022). Deep Learning Driven Natural Languages Text to SQL Query Conversion: A Survey. arXiv preprint arXiv:2208.04415.
+- Xu, X., Liu, C., & Song, D. (2017). Sqlnet: Generating structured queries from natural language without reinforcement learning. arXiv preprint arXiv:1711.04436.
+- Xu, K., Wang, Y., Wang, Y., Wen, Z., & Dong, Y. (2021). Sead: End-to-end text-to-sql generation with schema-aware denoising. arXiv preprint arXiv:2105.07911.
+- Luong, M. T., Pham, H., & Manning, C. D. (2015). Effective approaches to attention-based neural machine translation. arXiv preprint arXiv:1508.04025.
+- Bahdanau, D., Cho, K., & Bengio, Y. (2014). Neural machine translation by jointly learning to align and translate. arXiv preprint arXiv:1409.0473.
